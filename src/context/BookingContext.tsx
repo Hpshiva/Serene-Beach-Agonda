@@ -243,6 +243,14 @@ export const BookingProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
     setConfirmationData(confirmation);
     setPaymentState('success');
+
+    // Keep a running log of website bookings for the owner dashboard preview
+    try {
+      const history: BookingConfirmationData[] = JSON.parse(localStorage.getItem('sba_booking_history') || '[]');
+      localStorage.setItem('sba_booking_history', JSON.stringify([confirmation, ...history].slice(0, 20)));
+    } catch (e) {
+      // Ignore storage errors
+    }
     return confirmation;
   };
 

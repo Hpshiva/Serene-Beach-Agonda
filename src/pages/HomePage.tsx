@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { DirectBookingPerks } from '../components/DirectBookingPerks';
+import { DirectVsOtaComparison } from '../components/DirectVsOtaComparison';
 import { RoomsSection } from '../components/RoomsSection';
 import { StorySection } from '../components/StorySection';
 import { AmenitiesGrid } from '../components/AmenitiesGrid';
@@ -19,6 +20,9 @@ export const HomePage: React.FC = () => {
 
       {/* 2. Direct Booking Perks (CRO Focus) */}
       <DirectBookingPerks />
+
+      {/* 2b. Direct vs OTA Price Comparison */}
+      <DirectVsOtaComparison />
 
       {/* 3. Rooms & Accommodations */}
       <RoomsSection />

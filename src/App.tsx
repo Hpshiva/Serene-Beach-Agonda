@@ -18,6 +18,7 @@ import { ContactPage } from './pages/ContactPage';
 import { FAQPage } from './pages/FAQPage';
 import { BookingFlowPage } from './pages/BookingFlowPage';
 import { BookingConfirmationPage } from './pages/BookingConfirmationPage';
+import { OwnerDashboardPage } from './pages/OwnerDashboardPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,6 +75,7 @@ export function App() {
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/booking" element={<BookingFlowPage />} />
             <Route path="/booking/confirmation" element={<BookingConfirmationPage />} />
+            <Route path="/owner" element={<OwnerDashboardPage />} />
           </Routes>
         </div>
 

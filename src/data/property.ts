@@ -22,7 +22,7 @@ export const PROPERTY_DATA = {
   contacts: {
     phone: "+91 98765 43210", // Owner confirmation pending - configurable demo placeholder
     phoneDisplay: "+91 98765 43210 (Demo Contact)",
-    whatsapp: "+919876543210",
+    whatsapp: "919876543210", // Digits only — wa.me links reject a leading "+"
     whatsappDisplay: "+91 98765 43210",
     email: "reservations@serenebeachagonda.com",
     isPhonePendingConfirmation: true,

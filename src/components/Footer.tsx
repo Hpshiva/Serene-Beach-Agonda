@@ -278,6 +278,8 @@ export const Footer: React.FC = () => {
             <Link to="/contact" className="hover:text-white transition-colors">Concierge Contact</Link>
             <span>•</span>
             <Link to="/experiences" className="hover:text-white transition-colors">Turtle Sanctuary Pledge</Link>
+            <span>•</span>
+            <Link to="/owner" className="hover:text-white transition-colors">Owner Login</Link>
           </div>
         </div>
 

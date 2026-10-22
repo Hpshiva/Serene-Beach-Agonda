@@ -278,6 +278,16 @@ export const BookingConfirmationPage: React.FC = () => {
             </button>
           </div>
         </div>
+
+        {/* Demo hint for the property owner (hidden when printing) */}
+        <div className="mt-6 text-center print:hidden">
+          <Link
+            to="/owner"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#224840] bg-[#224840]/10 hover:bg-[#224840]/15 px-5 py-2.5 rounded-full transition-colors"
+          >
+            Owner view: see this booking in your dashboard →
+          </Link>
+        </div>
       </div>
     </div>
   );

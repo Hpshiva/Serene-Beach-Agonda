@@ -49,6 +49,7 @@ All property data, room categories, pricing, photos, and ratings were collected 
    - Immersive hero section with editorial typography and rating proof pills.
    - Prominent **Availability Search Widget** with date validation and guest counters.
    - **Direct Booking Perks** strip highlighting price match, breakfast perks, and flexibility.
+   - **Book Direct vs OTA** comparison with a live room/nights price calculator.
    - **Room Discovery Section** with interactive category filters.
    - **Story & Turtle Sanctuary** section celebrating Agonda's peaceful protected shores.
    - **Amenities Grid** showcasing modern conveniences.
@@ -78,7 +79,11 @@ All property data, room categories, pricing, photos, and ratings were collected 
    - **Step 3:** Guest Information (name, email, phone, arrival time, client-side validation).
    - **Step 4:** Review & Bill Breakdown (subtotal, taxes, direct savings, cancellation terms).
    - **Step 5:** Payment Demonstration (Razorpay Test Mode simulator with success, decline, and cancel states, plus Pay at Property option).
-9. **Official Booking Confirmation Voucher (`/booking/confirmation`)**:
+9. **Owner Dashboard Preview (`/owner`)**:
+   - Direct bookings table (sample rows plus any test bookings made in the browser), revenue and commission-avoided tiles.
+   - Interactive OTA commission savings calculator (rooms, rate, occupancy, commission %, share moved to direct, net of ~2% gateway fees).
+   - Guest journey from Google search to payment, and a go-live checklist.
+10. **Official Booking Confirmation Voucher (`/booking/confirmation`)**:
    - Generates persistent reference code `SBA-2026-XXXX`.
    - Complete itemized bill, guest details, and check-in/out policies.
    - Print/Save Voucher functionality (`window.print()`).
