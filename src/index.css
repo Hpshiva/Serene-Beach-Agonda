@@ -159,3 +159,19 @@
   background-color: var(--color-terracotta-hover);
   box-shadow: 0 8px 24px rgba(200, 109, 81, 0.25);
 }
+
+/* Slow Ken Burns drift on the hero photo */
+@keyframes hero-zoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+.animate-hero-zoom {
+  animation: hero-zoom 12s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-zoom,
+  .animate-marquee {
+    animation: none;
+  }
+}

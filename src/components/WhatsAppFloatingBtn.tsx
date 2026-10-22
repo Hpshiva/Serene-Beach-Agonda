@@ -1,10 +1,16 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { MessageSquare } from 'lucide-react';
 import { PROPERTY_DATA } from '../data/property';
+import { hidesMobileBookingBar } from './MobileBookingBar';
 
 export const WhatsAppFloatingBtn: React.FC = () => {
+  const { pathname } = useLocation();
+  // On phones the bottom booking bar already carries a WhatsApp button
+  const mobileVisibility = hidesMobileBookingBar(pathname) ? 'flex' : 'hidden sm:flex';
+
   return (
-    <aside aria-label="Direct Support" className="fixed bottom-6 right-6 z-40 flex items-center gap-2 group">
+    <aside aria-label="Direct Support" className={`fixed bottom-6 right-6 z-40 ${mobileVisibility} items-center gap-2 group print:hidden`}>
       <span className="hidden sm:inline-block bg-[#0D2229] text-white text-xs font-medium px-3 py-1.5 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 pointer-events-none">
         Chat with Agonda Host
       </span>

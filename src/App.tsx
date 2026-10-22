@@ -8,6 +8,7 @@ import { BookingProvider } from './context/BookingContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { WhatsAppFloatingBtn } from './components/WhatsAppFloatingBtn';
+import { MobileBookingBar } from './components/MobileBookingBar';
 
 import { HomePage } from './pages/HomePage';
 import { RoomsPage } from './pages/RoomsPage';
@@ -35,6 +36,9 @@ function ScrollToTop() {
 
 export function App() {
   useEffect(() => {
+    // Respect users who prefer reduced motion: keep native scrolling
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     // Initialize Lenis smooth scroll
     const lenis = new Lenis({
       duration: 1.1,
@@ -81,6 +85,7 @@ export function App() {
 
         <Footer />
         <WhatsAppFloatingBtn />
+        <MobileBookingBar />
       </div>
     </BookingProvider>
   );

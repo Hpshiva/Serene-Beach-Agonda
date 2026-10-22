@@ -162,7 +162,29 @@ export const OwnerDashboardPage: React.FC = () => {
               Make a test booking <ArrowRight className="w-3.5 h-3.5 text-[#CBA135]" />
             </Link>
           </div>
-          <div className="overflow-x-auto">
+          {/* Phone layout: one card per booking */}
+          <div className="sm:hidden divide-y divide-[#E8E2D5]">
+            {rows.map(r => (
+              <div key={r.ref} className="px-5 py-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="font-semibold text-[#0D2229] truncate">{r.guest}</div>
+                    <div className="text-xs text-[#566B70] truncate">{r.room}</div>
+                  </div>
+                  <div className="font-condensed font-black text-lg text-[#224840] shrink-0">{formatINR(r.amount)}</div>
+                </div>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 text-[11px] text-[#566B70]">
+                  <span>{new Date(r.checkIn).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })} • {r.nights} night{r.nights > 1 ? 's' : ''}</span>
+                  <span>{r.payment}</span>
+                  {r.isSample
+                    ? <span className="text-[9px] font-bold uppercase tracking-wider text-[#A8B5B2] bg-[#F3EFE6] px-1.5 py-0.5 rounded">Sample</span>
+                    : <span className="text-[9px] font-bold uppercase tracking-wider text-white bg-[#224840] px-1.5 py-0.5 rounded">New</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden sm:block overflow-x-auto">
             <table className="w-full text-sm min-w-[720px]">
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-widest text-[#A8B5B2] bg-[#FBF9F5]">
